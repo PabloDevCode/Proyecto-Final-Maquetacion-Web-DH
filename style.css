@@ -1,0 +1,357 @@
+/* .roboto-mono-<uniquifier> {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal; }
+
+.inconsolata-<uniquifier> {
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+                "wdth" 100; } */
+
+/* NORMALIZACIÓN: */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*esto mantiene el ancho y el alto a pesar del padding y el margin*/
+    font-family: "Inconsolata", monospace;
+    list-style: none;
+    /*quitar los puntos y las decoraciones de las listas*/
+    text-decoration: none;
+    /*esto quita el subrayado de los enlases*/
+    color: white;
+
+}
+
+body {
+    background-color: black;
+    /* TODO: borrar cuando tenga el fondo final */
+}
+
+header {
+    position: fixed;
+    /*esto hace que el header quede fijo arriba*/
+    right: 0;
+    top: 0;
+    z-index: 100;
+    /*esto hace que el header se muestre por encima*/
+    width: 100%;
+    /*utiliza el 100%*/
+    display: flex;
+    /*esto hara que los elementos se pongan en linea*/
+    align-items: center;
+    /*cetra verticalmente*/
+    justify-content: space-between;
+    /*los elementos se separan*/
+    padding: 15px 3%;
+    background-color: transparent;
+
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+    /*este es el grueso de las letras*/
+
+}
+
+.navlist {
+    display: flex;
+    /*esto es para que lo elementos de la lista UL se pongan en linea*/
+}
+
+.navlist a {
+    margin-left: 60px;
+    /*es para separar las palabras. utilizamos solo el margen izquierda porque ya estaba separadod en el derecho*/
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    /* este es un subrayado transparente*/
+    transition: all .5s ease;
+    /*animar todas las caracteristicas del .navlist a. las transiciones duran 5 segundos*/
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
+    /*este es un subrayado blanco que aparecera cuando hagamos hover(coloquemos el cursor en el elemento)*/
+}
+
+/* #menu-icon {
+    display: none;
+     lo pongo en none para que solo se vea cuando la pagina esta colapsada de forma horizontal
+} */
+
+#menu-icon {
+    color: white;
+    font-size: 35px;
+    z-index: 101;
+    /* para que este sobre eñ header */
+    cursor: pointer;
+    /* para que aparezca la manito cuando pasa el cursor por encima del menu */
+}
+
+#menu-toggle {
+    display: none;
+    transition: all .2s ease;
+    /* nunca quiero que se vea el checkbox */
+}
+
+.menu-icon-action {
+    display: none;
+    /* para que no se le pueda hacer click */
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+    /* fondo de color gradiente */
+    position: relative;
+    /* para que sea relativo al contenedor (nos permite usa top, bottom, left y right ;) */
+    display: grid;
+    /* para que el hero se pueda dividir en 2 columnas  */
+    grid-template-columns: 1fr 1fr;
+    /* las 2 columnas  */
+    align-items: center;
+    /* alinear verticalmente el hero  */
+    gap: 2rem;
+    /* espacio de 2 rem entre columnas */
+}
+
+section {
+    padding: 0 8%;
+    /* padding 0 vertical 8% horizontal  */
+}
+
+.hero-text h5 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-text h1 {
+    font-family: "Roboto Mono", monospace;
+    font-size: 50px;
+    line-height: 1;
+    /* separacion de letras entre si  */
+    margin: 0 0 30px;
+}
+
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+    /* separacion de lineas de palabras entre si  */
+}
+
+.hero-img img {
+    width: 400px;
+    margin: 10px 0 0 10%;
+    /* mas margen arriba, 0 derecha, 0 abajo, mas margen a la izquierda */
+    height: auto;
+    border-radius: 200px;
+    transition: all .5s linear;
+    /* esto hace que la transicion sea lineal  */
+}
+
+.hero-img img:hover {
+    width: 90%;
+    opacity: 0.6;
+    border-radius: 400px;
+}
+
+.hero-text a {
+    display: inline-block;
+    /* va a permitir que se le pueda dar un ancho y un alto  */
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    /* borde transparente para usar con una transicion (#1)  */
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    /* tamaño de letras  */
+    font-weight: 500;
+    border-radius: 30px;
+    /* redondear bordes  */
+    text-transform: uppercase;
+    /* para que sea todo mayuscula */
+    transition: all .5s ease;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 1px solid white;
+    /* transicion #1 */
+    transform: translateX(8px);
+    /* se desplaza en el eje x (horizontal)  */
+}
+
+.hero-text a.videos {
+    /* hacemos este cambio en Mira Mis Videos para que los botones sean distintos en 1ra instancia  */
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.videos i {
+    vertical-align: middle;
+    /* se centra hacia el medio, se alinea verticalmente */
+    margin-right: 5px;
+}
+
+.icons {
+    position: absolute;
+    top: 50vh;
+    /*se ubica a mitad de pantalla */
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    /* ocupa la totalidad del ancho de pantalla (elemento de bloque) por eso se ubican uno debajo del otro  */
+    margin: 26px 0;
+    font-size: 24px;
+    transition: all.5s ease;
+}
+
+.icons i:hover {
+    color: #4d4d4d;
+    transform: translateY(-5px);
+    /* al colocar el cursor encima de los iconos, éstos de desplazan hacia arriba y cambian de color */
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+    /* ubicamos el boton abajo a la derecha */
+}
+
+.scroll-down i {
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #21383d;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover {
+    transform: translateY(-8px);
+}
+
+/* aca vamos a hacer mediaqueries para que la web sea responsive*/
+
+@media (max-width:992px)
+/* 1er breackpoint */
+    {
+    section {
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .hero-text {
+        padding-top: 0;
+    }
+
+    .hero-img {
+        text-align: center;
+    }
+
+    .hero-img img {
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    /* .hero-img img:hover {
+        width: 95%;
+    } */
+
+    .hero-text p {
+        font-size: 70%;
+
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+}
+
+@media (max-width: 768px)
+/* 2do breackpoint */
+    {
+    .menu-icon-action {
+        display: block;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .hero-text {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img {
+        margin: 0;
+        border-radius: 600px;
+    }
+
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        /* saco la navlist de escena para que aparezca al pulsar el boton del menu-toggle */
+        width: 120px;
+        height: 180px;
+        background-color: #021719ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .1s ease;
+        border-radius: 25px;
+    }
+
+    .navlist a {
+        display: block;
+        margin: 7px;
+
+    }
+
+    #menu-toggle:checked+label.menu-icon-action+ul
+
+    /* si esta checked (el checkbox que esta oculto dentro del label), selecciono el hermano (ul),
+    y a este hno que es ul le asigo rigth 0 para q vuelva a aparecer el menu-toggle */
+        {
+        right: 0;
+    }
+
+    #menu-toggle:checked+label.menu-icon-action {
+        background-color: #021719ef;
+        border-radius: 10px;
+    }
+}
