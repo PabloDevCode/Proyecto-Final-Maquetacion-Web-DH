@@ -22,7 +22,6 @@ Este proyecto no solo demuestra mis habilidades técnicas en desarrollo Frontend
 ## 📸 Captura de Pantalla
 
 ![Vista Previa del Proyecto](assets/imgs/preview.png)
-*(Nota: ¡Asegúrate de subir una captura de tu web en la carpeta assets/imgs/ con el nombre preview.png para que se vea aquí!)*
 
 ---
 
