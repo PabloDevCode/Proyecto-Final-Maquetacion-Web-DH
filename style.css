@@ -355,4 +355,8 @@ section {
         background-color: #021719ef;
         border-radius: 10px;
     }
+
+    #fotito {
+        width: 200px;
+    }
 }
