@@ -82,7 +82,7 @@ header {
 
 /* #menu-icon {
     display: none;
-     lo pongo en none para que solo se vea cuando la pagina esta colapsada de forma horizontal
+     lo pongo en none para que solo se vea cuando la pagina esta colapsada de forma horizontal 
 } */
 
 
@@ -93,6 +93,7 @@ header {
     /* para que este sobre eñ header */
     cursor: pointer;
     /* para que aparezca la manito cuando pasa el cursor por encima del menu */
+    display: none;
 }
 
 #menu-toggle {
@@ -130,7 +131,7 @@ section {
 }
 
 .hero-text h5 {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     margin-bottom: 25px;
 }
@@ -194,7 +195,7 @@ section {
     background-color: transparent;
     border: 1px solid white;
     /* transicion #1 */
-    transform: translateX(8px);
+    transform: translateX(14px);
     /* se desplaza en el eje x (horizontal)  */
 }
 
@@ -343,20 +344,11 @@ section {
 
     }
 
-    #menu-toggle:checked+label.menu-icon-action+ul
-
-    /* si esta checked (el checkbox que esta oculto dentro del label), selecciono el hermano (ul),
-    y a este hno que es ul le asigo rigth 0 para q vuelva a aparecer el menu-toggle */
-        {
-        right: 0;
-    }
-
-    #menu-toggle:checked+label.menu-icon-action {
-        background-color: #021719ef;
-        border-radius: 10px;
-    }
-
     #fotito {
         width: 200px;
+    }
+
+    .navlist.open {
+        right: 0;
     }
 }
